@@ -20,8 +20,8 @@ export class Jot {
     }
 
     get ActiveJotTemplate() {
-        return `<form onsubmit="app.JotsController.setActiveJot('${this.id}')">
-    <h2><i class="mdi mdi-note" style="color:${this.color};"></i>${this.name}</h2>
+        return `<form onsubmit="app.JotsController.saveJots('${this.id}')">
+    <h2 class="text-white"><i class="mdi mdi-note" style="color:${this.color};"></i>${this.name}</h2>
     <textarea class="w-100" name="reportBody" id="reportBody" >${this.reportBody}</textarea>
     <button>Save Jot</button>
     </form>`
