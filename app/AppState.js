@@ -32,7 +32,7 @@ class ObservableAppState extends EventEmitter {
   //   //   description: "You know words aren't really my forte"
   //   // }),
   // ]
-  /** @type {import('./models/Jot.js').Jot[]} */
+  /** @type {import('./models/Jot.js').Jot | null} */
   activeJot = null
 
   init() {

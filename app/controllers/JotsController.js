@@ -18,6 +18,7 @@ function _drawJotList() {
 
 function _drawActiveJot() {
     let active = AppState.activeJot
+
     setHTML('active-jot', active.ActiveJotTemplate)
     return
 }
@@ -27,10 +28,8 @@ export class JotsController {
 
         console.log('Jots Controller');
         _drawJotList()
-        _drawActiveJot()
         AppState.on('jots', _drawJotList)
         AppState.on('activeJot', _drawActiveJot)
-
     }
     async removeJot(jotData) {
         if (await Pop.confirm('Are you sure?'))
@@ -51,6 +50,7 @@ export class JotsController {
         console.log('this is jotData', formData)
         _drawCount
         jotsService.createJot(formData)
+        // @ts-ignore
         formEvent.reset()
     }
 

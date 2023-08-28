@@ -6,7 +6,7 @@ export class Jot {
     constructor(data) {
         this.id = generateId()
         this.name = data.name
-        this.createdDate = data.createdDate ? new Date(data.createdDate) : new Date()
+        this.createdDate = new Date() // TAKE OUT OF TERNARY, not changing created date, only reported 
         this.reportedDate = data.reportedDate ? new Date(data.reportedDate) : new Date()
         this.reportBody = data.reportBody || ". . . . . "
         this.color = data.color

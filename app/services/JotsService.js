@@ -16,6 +16,8 @@ class JotsService {
 
         let selectedJot = AppState.jots.find(j => j.id == jotID)
         let activeJot = selectedJot
+        AppState.activeJot = activeJot
+
     }
 
     saveJot() {
