@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.1.96/css/materialdesignicons.min.css"
+    integrity="sha512-NaaXI5f4rdmlThv3ZAVS44U9yNWJaUYWzPhvlg5SC7nMRvQYV9suauRK3gVbxh7qjE33ApTPD+hkOW78VSHyeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>JOT</title>
+</head>
+
+<body>
+  <!-- SECTION -->
+  <header>
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+      <a class="navbar-brand" href="#">
+        <span class="">JOT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SECTION -->
+  <main class="container-fluid" id="router-view">
+    <!-- PRIMARY VIEWPORT -->
+    <section class="row">
+      <div class="col-4">
+
+      </div>
+    </section>
+
+    <!-- CanvasForm -->
+  </main>
+
+
+  <div class="container-fluid">
+    <section class="row">
+      <div class="col-4 new-jot">
+
+        <form onsubmit="app.JotsController.createJot(data)" class="row align-items-end mb-3">
+          <div class="col-4">
+            <label for="jotName" class="form-label">Jot Name</label>
+            <input type="text" minlength="3" maxlength="15" required class="form-control" name="name" id="name"
+              placeholder="New Jot Name">
+          </div>
+          <div class="col-2">
+            <label for="ColorInput" class="form-label">Pick Color:</label>
+            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#993d7c"
+              title="Choose your color" name="color">
+          </div>
+          <div class=" col-1 ms-5" title="create-jot">
+            <button type="submit" class="btn btn-outline-success">Create
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="active-jot"></div>
+    </section>
+  </div>
+
+  <!-- SECTION -->
+  <footer>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/App.js" type="module"></script>
+
+</body>
+
+</html>
