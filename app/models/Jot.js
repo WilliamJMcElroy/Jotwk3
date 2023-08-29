@@ -7,15 +7,15 @@ export class Jot {
     constructor(data) {
         this.id = generateId()
         this.name = data.name
-        this.createdDate = new Date()
+        this.createdDate = new Date().toDateString() || data.createdDate
         this.reportedDate = data.reportedDate ? new Date(data.reportedDate) : new Date()
         this.reportBody = data.reportBody || ". . . . . "
         this.color = data.color
     }
     get JotTemplate() {
         return `<p class="selectable" onclick="app.JotsController.setActiveJot('${this.id}')">${this.name}<i class="mdi mdi-note" style="color:${this.color};"></i>
-        <p>Created on: ${this.createdDate.toLocaleDateString()}</p>
-        <p>Updated at: ${this.reportedDate.toLocaleTimeString()}</p>
+        <p>Created on: ${this.createdDate}<p>
+        <p>Updated at: ${this.reportedDate.toLocaleDateString()} ${this.reportedDate.toLocaleTimeString()}</p>
         </p>
     <button onclick="app.JotsController.removeJot('${this.id}')" class="btn btn-danger mdi mdi-delete"></button>`
     }
