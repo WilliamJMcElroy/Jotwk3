@@ -13,8 +13,9 @@ export class Jot {
     }
     get JotTemplate() {
         return `<p class="selectable" onclick="app.JotsController.setActiveJot('${this.id}')">${this.name}<i class="mdi mdi-note" style="color:${this.color};"></i>
-        <p>Created on: ${this.createdDate.toLocaleDateString()} ${this.createdDate.toLocaleTimeString()}</p>
+        <p>Created on: ${this.createdDate.toLocaleDateString()} at ${this.createdDate.toLocaleTimeString()}</p>
         <p>Updated on: ${this.reportedDate.toLocaleDateString()} ${this.reportedDate.toLocaleTimeString()}</p>
+        <p>Content: ${this.reportBody}
         </p>
     <button onclick="app.JotsController.removeJot('${this.id}')" class="btn btn-danger mdi mdi-delete"></button>`
     }

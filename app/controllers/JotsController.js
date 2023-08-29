@@ -55,11 +55,15 @@ export class JotsController {
     }
 
     saveJots() {
-        debugger
-        let textAreaElem = document.querySelector('textarea')
-        let updatedJot = textAreaElem.value
-        jotsService.saveJot(updatedJot)
-        console.log('saving', updatedJot)
+        event.preventDefault()
+        let form = event?.target
+        let jotData = getFormData(form)
+        jotsService.saveJot(jotData)
+
+        // let textAreaElem = document.querySelector('textarea')
+        // let updatedJot = textAreaElem.value
+        // jotsService.saveJot(updatedJot)
+        // console.log('saving', updatedJot)
     }
 
 }

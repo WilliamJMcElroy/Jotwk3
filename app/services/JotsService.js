@@ -20,8 +20,9 @@ class JotsService {
     }
 
     saveJot(updatedJot) {
-        let active = AppState.activeJot
-        active.reportBody = updatedJot
+        let savedJot = AppState.activeJot
+        savedJot.reportBody = updatedJot.description
+        savedJot.reportedDate = new Date()
         _saveState()
     }
     createJot(formData) {
@@ -35,11 +36,9 @@ class JotsService {
     }
 
     removeJot(jotData) {
-        console.log("working???", jotData);
         let filteredArray = AppState.jots.filter(j => j.id != jotData)
         AppState.jots = filteredArray
-        console.log('New array in AppState:', AppState.jots);
-        saveState('jots', AppState.jots)
+        saveState()
     }
 
 
