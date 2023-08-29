@@ -54,17 +54,12 @@ export class JotsController {
         formEvent.reset()
     }
 
-    saveJots(Content) {
-        window.event.preventDefault()
-        const form = window.event.target
-        const jotData = getFormData(form)
-        console.log(jotData);
-        jotsService.saveJot()
-
-        // let text = document.querySelector('textarea')
-        // let updatedNote = text.value
-        // console.log('saving', updatedNote)
-        // jotsService.saveJot(updatedNote)
+    saveJots() {
+        debugger
+        let textAreaElem = document.querySelector('textarea')
+        let updatedJot = textAreaElem.value
+        jotsService.saveJot(updatedJot)
+        console.log('saving', updatedJot)
     }
 
 }

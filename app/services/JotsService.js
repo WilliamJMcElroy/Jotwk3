@@ -13,27 +13,15 @@ function _saveState() {
 
 class JotsService {
     setActiveJot(jotID) {
-
         let selectedJot = AppState.jots.find(j => j.id == jotID)
         let activeJot = selectedJot
         AppState.activeJot = activeJot
 
     }
 
-    saveJot() {
-        let text = document.querySelector('textarea')
-        let updatedJot = text.value
-        let currentJot = AppState.activeJot
-        currentJot.reportBody = text
-        this.reportedDate = new Date()
-        this.id = generateId()
-        const index = AppState.jots.findIndex(j => j.id == this.id)
-        console.log(index);
-        AppState.jots.splice(index, 1, currentJot)
-        AppState.emit('jots')
-
-        // debugger
-        console.log(AppState.jots, AppState.activeJot)
+    saveJot(updatedJot) {
+        let active = AppState.activeJot
+        active.reportBody = updatedJot
         _saveState()
     }
     createJot(formData) {
