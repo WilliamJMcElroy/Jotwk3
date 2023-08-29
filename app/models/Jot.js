@@ -3,6 +3,7 @@ import { AppState } from "../AppState.js"
 
 export class Jot {
 
+
     constructor(data) {
         this.id = generateId()
         this.name = data.name
@@ -13,9 +14,8 @@ export class Jot {
     }
     get JotTemplate() {
         return `<p class="selectable" onclick="app.JotsController.setActiveJot('${this.id}')">${this.name}<i class="mdi mdi-note" style="color:${this.color};"></i>
-        <p>Created on: ${this.createdDate.toLocaleDateString()} at ${this.createdDate.toLocaleTimeString()}</p>
-        <p>Updated on: ${this.reportedDate.toLocaleDateString()} ${this.reportedDate.toLocaleTimeString()}</p>
-        <p>Content: ${this.reportBody}
+        <p>Created on: ${this.createdDate.toLocaleDateString()}</p>
+        <p>Updated at: ${this.reportedDate.toLocaleTimeString()}</p>
         </p>
     <button onclick="app.JotsController.removeJot('${this.id}')" class="btn btn-danger mdi mdi-delete"></button>`
     }
