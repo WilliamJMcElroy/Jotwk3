@@ -21,7 +21,7 @@ class JotsService {
 
     saveJot(updatedJot) {
         let savedJot = AppState.activeJot
-        savedJot.reportBody = updatedJot.description
+        savedJot.reportBody = updatedJot
         savedJot.reportedDate = new Date()
         _saveState()
     }
